@@ -14,11 +14,11 @@ This program displays a 3D rotating cube, rendered in ASCII art, in the console.
 
 ## Theory
 
-This section explains the mathematical principles behind the 3D transformations and projections used in the program.
+This section delves into the mathematical principles and techniques employed to achieve the 3D transformations and projections in the program.
 
 ### 3D Rotations
 
-The vertices of the cube are rotated in 3D space using rotation matrices. The rotation angles \( A \), \( B \), and \( C \) represent rotations around the x, y, and z axes, respectively.
+To animate the rotating cube, the vertices are rotated in 3D space using rotation matrices. The rotation angles \( A \), \( B \), and \( C \) represent rotations around the x, y, and z axes, respectively.
 
 #### Rotation Matrices
 
@@ -34,36 +34,35 @@ The vertices of the cube are rotated in 3D space using rotation matrices. The ro
 
   ![z-axis rotation](https://latex.codecogs.com/svg.latex?%5Cbegin%7Bbmatrix%7D%5Ccos%28C%29%20%26%20-%5Csin%28C%29%20%26%200%20%5C%5C%5Csin%28C%29%20%26%20%5Ccos%28C%29%20%26%200%20%5C%5C0%20%26%200%20%26%201%20%5Cend%7Bbmatrix%7D)
 
-These matrices are combined to rotate a point \((i, j, k)\) in 3D space, creating the illusion of a rotating cube.
+These matrices are combined to rotate a point \( (i, j, k) \) in 3D space, creating the illusion of a rotating cube.
+
 ### 3D to 2D Projection
 
-After rotating the points, they are projected onto a 2D plane using perspective projection. The distance from the camera to the projection plane and the scale factor \( K1 \) are used to determine the 2D coordinates.
+After rotating the points, the next step is projecting them onto a 2D plane using perspective projection. This involves calculating the 2D coordinates based on the distance from the camera to the projection plane and a scale factor \( K1 \).
 
 #### Perspective Projection
 
-The perspective projection transforms 3D coordinates \((x, y, z)\) to 2D coordinates \((xp, yp)\) using the following formulas:
+The perspective projection transforms 3D coordinates \( (x, y, z) \) to 2D coordinates \( (xp, yp) \) using the following formulas:
 
-\[
-\text{ooz} = \frac{1}{z}
-\]
+- `oo𝑧` : This represents the reciprocal of the depth z. It is calculated as : ![ozz](https://latex.codecogs.com/svg.latex?ooz%20%3D%20%5Cfrac%7B1%7D%7Bz%7D)
 
-\[
-xp = \left(\frac{\text{width}}{2} + \text{horizontalOffset} + K1 \cdot \text{ooz} \cdot x \cdot 2\right)
-\]
+- `xp` : This is the x-coordinate in the projected 2D space. It is calculated as:
 
-\[
-yp = \left(\frac{\text{height}}{2} + K1 \cdot \text{ooz} \cdot y\right)
-\]
+  ![xp](https://latex.codecogs.com/svg.latex?xp%20%3D%20%5Cleft%28%20%5Cfrac%7B%5Ctext%7Bwidth%7D%7D%7B2%7D%20+%20%5Ctext%7BhorizontalOffset%7D%20+%20K1%20%5Ccdot%20%5Cfrac%7B1%7D%7Bz%7D%20%5Ccdot%20x%20%5Ccdot%202%20%5Cright%29)
+
+- `yp` : This is the y-coordinate in the projected 2D space. It is calculated as:
+
+  ![yp](https://latex.codecogs.com/svg.latex?yp%20%3D%20%5Cleft%28%20%5Cfrac%7B%5Ctext%7Bheight%7D%7D%7B2%7D%20+%20K1%20%5Ccdot%20%5Cfrac%7B1%7D%7Bz%7D%20%5Ccdot%20y%20%5Cright%29)
 
 ### Depth Buffer
 
-A depth buffer (\( zBuffer \)) is used to keep track of the depth of each pixel on the screen. This ensures that closer surfaces correctly overwrite farther surfaces, achieving proper rendering of the 3D cube.
+To ensure proper rendering, a depth buffer (`zBuffer`) keeps track of the depth of each pixel on the screen. This allows closer surfaces to correctly overwrite farther surfaces, maintaining the correct visual representation of the 3D cube.
 
 ## Code Overview
 
-The program consists of the following key components:
+The program consists of several key components, each playing a crucial role in rendering the 3D rotating cube.
 
-1. **Global Variables**: These variables store the cube dimensions, rotation angles, buffer, and rendering settings.
+1. **Global Variables**: These variables store the cube dimensions, rotation angles, buffers, and rendering settings.
 2. **Functions**: 
     - `calculateX`, `calculateY`, and `calculateZ`: These functions calculate the 3D coordinates of the cube vertices.
     - `calculateForSurface`: This function projects 3D coordinates to 2D space and updates the buffer.
@@ -73,10 +72,18 @@ The program consists of the following key components:
     - Updates the rotation angles.
     - Renders the buffer to the console.
 
-## License
+Here’s a brief breakdown of the main functions:
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+### `calculateX`, `calculateY`, `calculateZ`
+
+These functions compute the rotated coordinates for each vertex of the cube. They utilize the rotation matrices to transform the coordinates based on the current rotation angles.
+
+### `calculateForSurface`
+
+This function projects the 3D coordinates to 2D space, applying perspective projection. It updates the buffer and the depth buffer to ensure the correct rendering of the cube surfaces.
+
+### Main Loop
+
+The main loop clears the screen and buffers, then iteratively calculates the projections for each surface of the cube. It updates the rotation angles to animate the cube and renders the final ASCII art to the console.
 
 ---
-
-Feel free to customize the repository URL and any other specific details as per your requirements.
