@@ -44,7 +44,8 @@ After rotating the points, the next step is projecting them onto a 2D plane usin
 
 The perspective projection transforms 3D coordinates \( (x, y, z) \) to 2D coordinates \( (xp, yp) \) using the following formulas:
 
-- `oo𝑧` : This represents the reciprocal of the depth z. It is calculated as : ![ozz](https://latex.codecogs.com/svg.latex?ooz%20%3D%20%5Cfrac%7B1%7D%7Bz%7D)
+- `oo𝑧` : This represents the reciprocal of the depth z. It is calculated as :
+  ![ozz](https://latex.codecogs.com/svg.latex?ooz%20%3D%20%5Cfrac%7B1%7D%7Bz%7D)
 
 - `xp` : This is the x-coordinate in the projected 2D space. It is calculated as:
 
