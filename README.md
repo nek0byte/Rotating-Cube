@@ -6,7 +6,6 @@ This project is a C++ program that generates and animates a 3D rotating cube usi
 - [Introduction](#introduction)
 - [Theory](#theory)
 - [Code Overview](#code-overview)
-- [License](#license)
 
 ## Introduction
 
