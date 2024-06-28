@@ -23,34 +23,18 @@ The vertices of the cube are rotated in 3D space using rotation matrices. The ro
 #### Rotation Matrices
 
 - **Rotation around the x-axis**:
-    \[
-    \begin{bmatrix}
-    1 & 0 & 0 \\
-    0 & \cos(A) & -\sin(A) \\
-    0 & \sin(A) & \cos(A)
-    \end{bmatrix}
-    \]
+
+  ![x-axis rotation](https://latex.codecogs.com/svg.latex?%5Cbegin%7Bbmatrix%7D1%20%26%200%20%26%200%20%5C%5C0%20%26%20%5Ccos%28A%29%20%26%20-%5Csin%28A%29%20%5C%5C0%20%26%20%5Csin%28A%29%20%26%20%5Ccos%28A%29%20%5Cend%7Bbmatrix%7D)
 
 - **Rotation around the y-axis**:
-    \[
-    \begin{bmatrix}
-    \cos(B) & 0 & \sin(B) \\
-    0 & 1 & 0 \\
-    -\sin(B) & 0 & \cos(B)
-    \end{bmatrix}
-    \]
+
+  ![y-axis rotation](https://latex.codecogs.com/svg.latex?%5Cbegin%7Bbmatrix%7D%5Ccos%28B%29%20%26%200%20%26%20%5Csin%28B%29%20%5C%5C0%20%26%201%20%26%200%20%5C%5C-%5Csin%28B%29%20%26%200%20%26%20%5Ccos%28B%29%20%5Cend%7Bbmatrix%7D)
 
 - **Rotation around the z-axis**:
-    \[
-    \begin{bmatrix}
-    \cos(C) & -\sin(C) & 0 \\
-    \sin(C) & \cos(C) & 0 \\
-    0 & 0 & 1
-    \end{bmatrix}
-    \]
 
-These matrices are combined to rotate a point \((i, j, k)\) in 3D space.
+  ![z-axis rotation](https://latex.codecogs.com/svg.latex?%5Cbegin%7Bbmatrix%7D%5Ccos%28C%29%20%26%20-%5Csin%28C%29%20%26%200%20%5C%5C%5Csin%28C%29%20%26%20%5Ccos%28C%29%20%26%200%20%5C%5C0%20%26%200%20%26%201%20%5Cend%7Bbmatrix%7D)
 
+These matrices are combined to rotate a point \((i, j, k)\) in 3D space, creating the illusion of a rotating cube.
 ### 3D to 2D Projection
 
 After rotating the points, they are projected onto a 2D plane using perspective projection. The distance from the camera to the projection plane and the scale factor \( K1 \) are used to determine the 2D coordinates.
