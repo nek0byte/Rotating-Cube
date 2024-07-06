@@ -1,9 +1,9 @@
 #include <math.h>
 #include <iostream>
 #include <string>
+#include <unistd.h>
 
 float A, B, C;
-
 float cubeWidth = 20;
 int width = 160, height = 44;
 float zBuffer[160 * 44];
