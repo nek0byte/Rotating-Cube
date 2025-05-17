@@ -1,15 +1,4 @@
-# 3D Rotating Cube in ASCII Art
-
 This project is a C++ program that generates and animates a 3D rotating cube using ASCII art. It demonstrates basic 3D transformations, including rotations and projections, and renders the output on the console.
-
-## Table of Contents
-- [Introduction](#introduction)
-- [Theory](#theory)
-- [Code Overview](#code-overview)
-
-## Introduction
-
-This program displays a 3D rotating cube, rendered in ASCII art, in the console. The cube rotates continuously, providing a visual representation of 3D transformations and rendering techniques.
 
 ## Theory
 
