@@ -2,8 +2,6 @@ This project is a C++ program that generates and animates a 3D rotating cube usi
 
 ## Theory
 
-This section delves into the mathematical principles and techniques employed to achieve the 3D transformations and projections in the program.
-
 ### 3D Rotations
 
 To animate the rotating cube, the vertices are rotated in 3D space using rotation matrices. The rotation angles \( A \), \( B \), and \( C \) represent rotations around the x, y, and z axes, respectively.
